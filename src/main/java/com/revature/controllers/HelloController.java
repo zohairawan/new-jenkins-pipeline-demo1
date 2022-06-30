@@ -19,4 +19,10 @@ public class HelloController {
 	public String sayHello() throws UnknownHostException {
 		return String.format("Hello from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
+
+	//localhost:8080/bye
+	@GetMapping("/bye")
+	public String sayBye() throws UnknownHostException {
+		return String.format("Bye from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
 }
