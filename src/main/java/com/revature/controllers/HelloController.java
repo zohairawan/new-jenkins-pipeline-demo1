@@ -22,6 +22,12 @@ public class HelloController {
 		return String.format("Hello from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
 
+	//localhost:8080/thanks
+	@GetMapping("/morning")
+	public String sayMorning() throws UnknownHostException {
+		return String.format("Morning from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
+
 	//localhost:8080/bye
 	@GetMapping("/bye")
 	public String sayBye() throws UnknownHostException {
