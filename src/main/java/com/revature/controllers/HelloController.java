@@ -34,6 +34,12 @@ public class HelloController {
 		return String.format("Afternoon from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
 
+	//localhost:8080/evening
+	@GetMapping("/evening")
+	public String sayEvening() throws UnknownHostException {
+		return String.format("Evening from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
+
 	//localhost:8080/bye
 	@GetMapping("/bye")
 	public String sayBye() throws UnknownHostException {
