@@ -1,3 +1,5 @@
+//Test project to work with jenkins pipeline
+
 package com.revature.controllers;
 
 import java.net.InetAddress;
@@ -24,5 +26,11 @@ public class HelloController {
 	@GetMapping("/bye")
 	public String sayBye() throws UnknownHostException {
 		return String.format("Bye from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
+
+	//localhost:8080/thanks
+	@GetMapping("/thanks")
+	public String sayThanks() throws UnknownHostException {
+		return String.format("Thanks from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
 }
