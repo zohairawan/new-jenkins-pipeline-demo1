@@ -58,9 +58,15 @@ public class HelloController {
 		return String.format("Thanks from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
 
-	//localhost:8080/thanks
+	//localhost:8080/docker
 	@GetMapping("/docker")
 	public String sayDocker() throws UnknownHostException {
 		return String.format("Docker now part of it from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
+
+	//localhost:8080/dockersuccess
+	@GetMapping("/dockersuccess")
+	public String sayDockerSuccess() throws UnknownHostException {
+		return String.format("Docker successfully now part of it from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
 }
