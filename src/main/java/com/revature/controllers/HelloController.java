@@ -69,4 +69,10 @@ public class HelloController {
 	public String sayDockerSuccess() throws UnknownHostException {
 		return String.format("Docker successfully now part of it from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
+
+	//localhost:8080/yamer
+	@GetMapping("/yamer")
+	public String sayYamer() throws UnknownHostException {
+		return String.format("Yamer part of it from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
 }
