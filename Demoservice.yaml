@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: zohair-awan
+  name: demoservice-sunday-yaml
+  labels:
+    app: cog-lab-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cog-lab-demo
+  template:
+    metadata:
+      labels:
+        app: cog-lab-demo
+    spec:
+      containers:
+        - name: demoservice-sunday-yaml
+          image: zohair89/demoservice-sunday-yaml
+          ports:
+            - containerPort: 8085
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: zohair-awan
+  name: cog-lab-demo
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8085
+      nodePort: 30004
+  selector:
+    matchLabels:
+    app: cog-lab-demo
