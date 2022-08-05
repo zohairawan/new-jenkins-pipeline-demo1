@@ -75,4 +75,9 @@ public class HelloController {
 	public String sayYamer() throws UnknownHostException {
 		return String.format("Yamer part of it from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
 	}
+
+	@GetMapping("/welcome")
+	public String sayWelcome() throws UnknownHostException {
+		return String.format("Welcome from %s:%s", InetAddress.getLocalHost().getHostAddress(), env.getProperty("local.server.port"));
+	}
 }
