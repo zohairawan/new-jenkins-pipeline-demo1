@@ -4,7 +4,7 @@ node{
     }
 
     stage('Build Project') {
-        bat "C:\\Program^ Files\\apache-maven-3.8.5\\bin\\mvn package -DskipTests"
+        bat "C:\\Program Files\\apache-maven-3.8.6\\bin\\mvn package -DskipTests"
     }
 
     stage('Build Docker Image') {
@@ -12,7 +12,7 @@ node{
     }
 
     stage('Deploy') {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
             dockerImage.push("${env.BUILD_NUMBER}")
             dockerImage.push("latest")
         }
