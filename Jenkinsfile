@@ -4,7 +4,7 @@ node{
     }
 
     stage('Build Project') {
-        bat "C:\\Program Files\\apache-maven-3.8.6\\bin\\mvn package -DskipTests"
+        bat "C:\\Program^ Files\\apache-maven-3.8.6\\bin\\mvn package -DskipTests"
     }
 
     stage('Build Docker Image') {
